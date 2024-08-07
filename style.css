@@ -1,4 +1,4 @@
-/* Reset some default browser styles */
+/* Reset some default styles */
 body, h1, h2, p {
     margin: 0;
     padding: 0;
@@ -7,39 +7,30 @@ body, h1, h2, p {
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
 }
 
 header {
-    background: #333;
+    position: relative;
+    height: 400px; /* Adjust the height as needed */
+    background: url('landscape.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: #fff;
-    padding: 1rem;
     text-align: center;
-}
-
-header h1 {
-    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
 }
 
 main {
-    padding: 1rem;
+    padding: 2rem;
+    background-color: #f4f4f4;
 }
 
 section {
-    background: #fff;
-    padding: 1rem;
+    padding: 2rem;
     margin: 1rem 0;
+    background: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 0.5rem;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
 }
