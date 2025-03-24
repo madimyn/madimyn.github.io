@@ -1,85 +1,225 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
-.dark-mode {
-    background-color: #010101;
-    color: #fafafa;
-  }
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: #fff;
-    color: black;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
     text-align: center;
-    flex-direction: column;
 }
 
-
-.header-content {
-    max-width: 600px;
+h1, h2 {
+    margin-bottom: 20px;
 }
 
-nav ul {
+/* Header */
+header {
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+/* Project List */
+#projects ul {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    list-style: none;
+}
+
+#projects ul li {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#projects ul li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+#projects ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+#projects ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Contact Section */
+#contact ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+#contact ul li {
+    display: inline;
+}
+
+#contact ul li a {
+    color: #fff;
+    font-size: 1.8rem;
+    transition: color 0.3s ease-in-out;
+}
+
+#contact ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Footer */
+footer {
+    padding: 20px 20px;
+    background: rgba(0, 0, 0, 0.6);
     margin-top: 20px;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-nav ul li a {
-    color: #010101;
-    text-decoration: none;
-    font-size: 1.2em;
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-.nav-button {
-    text-decoration: none;
-    background: #333;
-    color: #fafafa;
-    padding: 10px 20px;
-    border-radius: 20px;
-    transition: background 0.3s, transform 0.2s;
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    #projects ul {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    #projects ul li {
+        padding: 15px;
+    }
+
+    footer {
+        padding: 20px 10px;
+    }
 }
 
-.nav-button:hover {
-    background: #555;
-    transform: scale(1.05);
+@media (max-width: 480px) {
+    header {
+        padding: 20px 10px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    section h2 {
+        font-size: 1.6rem;
+    }
+
+    section {
+        padding: 30px 10px;
+    }
+
+    #projects ul {
+        grid-template-columns: 1fr;
+    }
+
+    #projects ul li {
+        padding: 10px;
+    }
+
+    footer {
+        padding: 15px 10px;
+    }
 }
 
-
-main {
-    padding: 20px;
+/* About Section */
+/* About Section */
+#about {
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center; /* Aligns the content centrally */
 }
 
-section {
-    padding: 20px;
-    margin: 20px;
-    background: #fafafa;
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Ensures content wraps properly on smaller screens */
+}
+
+.about-text {
+    width: 50%;
+    text-align: left; /* Ensures the text is left-aligned */
+    line-height: 1.6; /* Improves text spacing */
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: center; /* Centers the header */
+}
+
+.about-text p {
+    font-size: 1rem;
+    text-align: justify; /* Justifies the paragraph text */
+    margin-bottom: 20px;
+}
+
+.about-image img {
+    width: 375px;
+    height: 812px;
+    object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.project {
-    background: #e3e3e3;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background: #333;
-    color: #fafafa;
+    .about-text {
+        width: 90%;
+        text-align: center; /* Centers the text on mobile for readability */
+    }
+
+    .about-image img {
+        width: 80%;
+        height: auto;
+    }
 }
