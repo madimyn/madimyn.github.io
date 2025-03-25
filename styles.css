@@ -1,225 +1,225 @@
-/* General Styles */
+/* Updated font styles */
+:root {
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --font-secondary: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: #fff;
-    text-align: center;
+    font-family: var(--font-primary);
+    font-weight: 400;
+    line-height: 1.6;
+    color: #212529;
 }
 
-h1, h2 {
-    margin-bottom: 20px;
+/* Add this to your styles.css */
+.header-gradient {
+    background: linear-gradient(270deg, #1a2a4f, #152238, #2a5298);
+    background-size: 300% 300%;
+    animation: GradientBackground 15s ease infinite;
 }
 
-/* Header */
+@keyframes GradientBackground {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+
+.section-divider {
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin: 1.5rem 0;
+}
+.compact-section {
+    padding: 1.5rem 0;
+}
+
+.compact-img {
+     height: 120px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Keep your existing header styles but remove the background-color */
 header {
-    padding: 40px 20px;
-    background: rgba(0, 0, 0, 0.6);
-    animation: fadeIn 1.5s ease-in-out;
+    transition: background 1s ease;
+    padding: 3rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--accent);
+    color: white;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+
+/* Add this to load Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Improved typography */
 h1 {
     font-size: 2.5rem;
+    letter-spacing: -0.025em;
 }
 
-/* Project List */
-#projects ul {
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    list-style: none;
+h2 {
+    font-size: 2rem;
+    letter-spacing: -0.015em;
+    margin-bottom: 1.5rem;
 }
 
-#projects ul li {
+h3 {
+    font-size: 1.5rem;
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+.lead {
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+/* Better paragraph spacing */
+p {
+    margin-bottom: 1.25rem;
+}
+
+/* Special styling for timeline dates */
+.timeline-date {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+/* Better list styling */
+ul {
+    padding-left: 1.25rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Cards */
+.card-body h3 {
+    font-weight: 600;
+}
+
+/* Badges */
+.badge {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+/* Buttons */
+.btn {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+/* Navigation */
+.navbar-brand {
+    font-weight: 600;
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+/* Image caption */
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
     background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 8px;
+    color: white;
+    border-bottom-left-radius: 0.375rem;
+    border-bottom-right-radius: 0.375rem;
+}
+
+/* Custom card hover effect */
+.card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#projects ul li:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
 }
 
-#projects ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
+/* Skills badges */
+.badge {
+    font-weight: 500;
+    padding: 0.5em 0.8em;
 }
 
-#projects ul li a:hover {
-    color: #ffcc00;
+/* Timeline mobile styles */
+.timeline-mobile .timeline-item {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 30px;
 }
 
-/* Contact Section */
-#contact ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+.timeline-mobile .timeline-item:last-child {
+    margin-bottom: 0;
 }
 
-#contact ul li {
-    display: inline;
+.timeline-mobile .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: -30px;
+    width: 2px;
+    background: var(--primary);
 }
 
-#contact ul li a {
-    color: #fff;
-    font-size: 1.8rem;
-    transition: color 0.3s ease-in-out;
+.timeline-mobile .timeline-item:last-child::before {
+    display: none;
 }
 
-#contact ul li a:hover {
-    color: #ffcc00;
+.timeline-mobile .timeline-item::after {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid var(--primary);
 }
 
-/* Footer */
-footer {
-    padding: 20px 20px;
-    background: rgba(0, 0, 0, 0.6);
-    margin-top: 20px;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideUp {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        padding: 30px 20px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    section {
-        padding: 40px 15px;
-    }
-
-    #projects ul {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-
-    #projects ul li {
-        padding: 15px;
-    }
-
-    footer {
-        padding: 20px 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        padding: 20px 10px;
-    }
-
-    h1 {
-        font-size: 1.6rem;
-    }
-
-    section h2 {
-        font-size: 1.6rem;
-    }
-
-    section {
-        padding: 30px 10px;
-    }
-
-    #projects ul {
-        grid-template-columns: 1fr;
-    }
-
-    #projects ul li {
-        padding: 10px;
-    }
-
-    footer {
-        padding: 15px 10px;
-    }
-}
-
-/* About Section */
-/* About Section */
-#about {
-    padding: 50px 20px;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    text-align: center; /* Aligns the content centrally */
-}
-
-.about-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-    flex-wrap: wrap; /* Ensures content wraps properly on smaller screens */
-}
-
-.about-text {
-    width: 50%;
-    text-align: left; /* Ensures the text is left-aligned */
-    line-height: 1.6; /* Improves text spacing */
-}
-
-.about-text h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    text-align: center; /* Centers the header */
-}
-
-.about-text p {
-    font-size: 1rem;
-    text-align: justify; /* Justifies the paragraph text */
-    margin-bottom: 20px;
-}
-
-.about-image img {
-    width: 375px;
-    height: 812px;
+/* Make image fill container */
+.object-fit-cover {
     object-fit: cover;
-    border-radius: 10px;
 }
 
-/* Responsive Design */
+/* Section padding */
+section {
+    padding: 3rem 0;
+}
+
+/* Social icons hover effect */
+.social-links a {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    color: var(--primary) !important;
+}
+
 @media (max-width: 768px) {
-    .about-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .about-text {
-        width: 90%;
-        text-align: center; /* Centers the text on mobile for readability */
-    }
-
-    .about-image img {
-        width: 80%;
-        height: auto;
+    .header-gradient {
+        animation: GradientBackground 25s ease infinite;
     }
 }
